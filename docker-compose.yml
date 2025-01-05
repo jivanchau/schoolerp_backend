@@ -47,6 +47,18 @@ services:
     expose:
       - "5432"
 
+  pgadmin:
+    image: dpage/pgadmin4
+    env_file:
+      - ./src/.env
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pg.com
+      PGADMIN_DEFAULT_PASSWORD: password
+
   redis:
     image: redis:alpine
     volumes:

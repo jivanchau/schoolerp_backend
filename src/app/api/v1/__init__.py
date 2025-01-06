@@ -8,6 +8,7 @@ from .tasks import router as tasks_router
 from .tiers import router as tiers_router
 from .users import router as users_router
 from app.modules.level.level_controller import router as level_router
+from app.modules.faculty.faculty_controller import router as faculty_router
 
 router = APIRouter(prefix="/v1")
 router.include_router(login_router)
@@ -19,3 +20,4 @@ router.include_router(tiers_router)
 router.include_router(rate_limits_router)
 
 router.include_router(level_router)
+router.include_router(faculty_router)
